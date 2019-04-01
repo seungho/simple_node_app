@@ -23,12 +23,12 @@ $ curl http://localhost:3000
 route/index.js 파일 열기.
 
 아래 라인이 우리가 5번에서 접근한 url임.
-router.get('/', getProject);
+router.get('/', getTest);
 
-getProject 함수에서 cmd 부분에 원하는 스크립트 절대경로를 넣어주면 됨.
-function getProject(req, res) {
+getTest 함수에서 cmd 부분에 원하는 스크립트 절대경로를 넣어주면 됨.
+function getTest(req, res) {
 	let p = rea.params;
-    logger.info('on getProject', req.sessionID, p);
+    logger.info('on getTest', req.sessionID, p);
 
 	let cmd = 'python ' + rootdir + '/routes/process/test.py '+ p.id;
     
@@ -37,22 +37,22 @@ function getProject(req, res) {
 router.get('/function1', function1);
 이러면 http://localhost:3000/function1 로 접근하면 됨.
 
-그리고 getProject 함수 리팩토링해서 cmd 부분만 다르게 들어가게 만들면 됨.
+그리고 getTest 함수 리팩토링해서 cmd 부분만 다르게 들어가게 만들면 됨.
 
 8. 인자를 받는 경우.
 index.js 파일에 아래와 같은 코드가 있는데,
-router.get('/project/:id', getProject);
-http://localhost:3000/project/ 이후에 id에 인자를 넣을 수 있음.
+router.get('/get-test/:id', getTest);
+http://localhost:3000/get-test/ 이후에 id에 인자를 넣을 수 있음.
 인자는 req.params에 담겨있음.
-function getProject(req, res) {
+function getTest(req, res) {
 	let p = req.params;
 
     
 9 post를 사용하는 경우.
 위와 똑같은 url을 사용하지만 post method를 사용했을 경우는 아래 함수를 타게 됨.
-router.post('/project/:id', addProject);
+router.post('/post-test/:id', postTest);
 인자는 req.body에 들어 있음.
-function addProject(req, res) {
+function postTest(req, res) {
     let p = req.body;
 
 
