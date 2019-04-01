@@ -1,0 +1,26 @@
+{
+  "name": "skel",
+  "version": "0.0.1",
+  "description": "Simple Node App",
+  "main": "app.js",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.2",
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "moment": "^2.24.0",
+    "winston": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://"
+  },
+  "keywords": [
+    "skel"
+  ],
+  "author": "ssh",
+  "license": "ISC",
+  "devDependencies": {}
+}
